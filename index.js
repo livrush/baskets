@@ -14,7 +14,6 @@ $('document').ready(function() {
   });
 
   $('#show-ceramic-form').click(function() {
-    console.warn('hey')
     $('#form-basket').hide();
     if ($('#form-ceramic')[0].childElementCount) {
       $('#form-ceramic').toggle();
