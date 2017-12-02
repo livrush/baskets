@@ -1,0 +1,9 @@
+@font-face {
+  font-family: 'Lobster';
+  src: url('/assets/fonts/Lobster/Lobster-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Cabin';
+  src: url('/assets/fonts/Cabin/Cabin-Regular.ttf') format('truetype');
+}
