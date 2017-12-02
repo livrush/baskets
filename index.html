@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Baskets Baskets Baskets</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="./style.css">  
+  <link href="https://fonts.googleapis.com/css?family=Cabin:400,700|Lobster" rel="stylesheet">  
+  <script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+  <script src="/index.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Sabo-Rush Longaberger Database</h1>
+    <div>
+      <button id="show-basket-form" class="btn btn-primary">Edit Baskets</button>
+      <button id="show-ceramics-form" class="btn btn-info">Edit Ceramics</button>
+      <button id="show-accessories-form" class="btn btn-warning">Edit Accessories</button>
+    </div>
+  </header>
+
+  <div class="baskets-form" hidden>
+    <h3>Basket Entry Form</h3>
+    <form action="/basket" method="POST">
+      <!-- Strings -->
+      <div class="row input-section">
+        <label class="col-xs-4">Year</label> 
+        <div class="col-xs-8">
+          <input class="form-control" name="year" type="text" autofocus>
+        </div>
+      </div>
+      <div class="row input-section">
+        <label class="col-xs-4">Quantity</label> 
+        <div class="col-xs-8">
+          <select class="form-control" name="quantity">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+          </select>
+        </div>
+      </div>
+      <div class="row input-section">
+        <label class="col-xs-4">Name</label> 
+        <div class="col-xs-8">
+          <input class="form-control" name="name" type="text">
+        </div>
+      </div>
+      <div class="row input-section">
+        <label class="col-xs-4">Type</label> 
+        <div class="col-xs-8">
+          <input class="form-control" name="type" type="text">
+        </div>
+      </div>
+      <div class="row input-section">
+        <label class="col-xs-4">Description</label> 
+        <div class="col-xs-8">
+          <input class="form-control" name="description" type="text">
+        </div>
+      </div>
+      <div class="row input-section">
+        <label class="col-xs-4">Color/Style</label> 
+        <div class="col-xs-8 simple-row">
+          <div class="color-spot red">
+            <input type="radio" name="color" value="red">
+          </div>
+          <div class="color-spot blue">
+            <input type="radio" name="color" value="blue">
+          </div>
+          <div class="color-spot green">
+            <input type="radio" name="color" value="green">
+          </div>
+          <div class="color-spot grey simple-row">
+            <p>N/A</p>
+            <input type="radio" name="color" value="null" checked>
+          </div>
+        </div>
+      </div>
+      <div class="row input-section">
+        <label class="col-xs-4">Size</label> 
+        <div class="col-xs-8 row simple-row">
+          <div class="simple-row col-xs-3">
+            <p>S</p>
+            <input type="radio" name="size" value="small">
+          </div>
+          <div class="simple-row col-xs-3">
+            <p>M</p>
+            <input type="radio" name="size" value="medium">
+          </div>
+          <div class="simple-row col-xs-3">
+            <p>L</p>
+            <input type="radio" name="size" value="large">
+          </div>
+          <div class="simple-row col-xs-3">
+            <p>N/A</p>
+            <input type="radio" name="size" value="null" checked>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Booleans -->
+      <div class="row input-section">
+        <label class="col-xs-4">Lid</label> 
+        <div class="col-xs-8 row">
+          <p class="col-xs-3">Yes</p>
+          <input class="col-xs-3" type="radio" name="lid" value="true">
+          <p class="col-xs-3">No</p>
+          <input class="col-xs-3" type="radio" name="lid" value="false" checked>
+        </div>
+      </div>
+      <div class="row input-section">
+        <label class="col-xs-4">Liner</label> 
+        <div class="col-xs-8 row">
+          <p class="col-xs-3">Yes</p>
+          <input class="col-xs-3" type="radio" name="liner" value="true">
+          <p class="col-xs-3">No</p>
+          <input class="col-xs-3" type="radio" name="liner" value="false" checked>
+        </div>
+      </div>
+      <div class="row input-section">
+        <label class="col-xs-4">Protector</label> 
+        <div class="col-xs-8 row">
+          <p class="col-xs-3">Yes</p>
+          <input class="col-xs-3" type="radio" name="protector" value="true">
+          <p class="col-xs-3">No</p>
+          <input class="col-xs-3" type="radio" name="protector" value="false" checked>
+        </div>
+      </div>
+      <div class="row input-section">
+        <label class="col-xs-4">Accessories</label> 
+        <div class="col-xs-8 row">
+          <p class="col-xs-3">Yes</p>
+          <input class="col-xs-3" type="radio" name="accessories" value="true">
+          <p class="col-xs-3">No</p>
+          <input class="col-xs-3" type="radio" name="accessories" value="false" checked>
+        </div>
+      </div>
+
+      <!-- Arrays -->
+      <div class="row input-section">
+        <label class="col-xs-4">What Accessories</label> 
+        <div class="col-xs-8">
+          <input class="form-control" name="accessories-list" type="text" placeholder="Separate with comma"> 
+        </div>
+      </div>
+
+      <div class="row input-section">
+        <label class="col-xs-4"></label>
+        <div class="col-xs-8 simple-row">
+          <button type="submit" class="btn btn-lg btn-success">Submit</button>
+        </div>
+      </div>
+
+    </form>
+  </div>
+  
+  <div class="products"></div>
+</body>
+</html>

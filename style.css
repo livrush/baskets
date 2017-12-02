@@ -1,0 +1,161 @@
+body {
+    background: url('/assets/pixel_weave/pixel_weave2.png');
+    font-family: 'Cabin', sans-serif;
+}
+
+header {
+    width: 100%;
+    background: white;
+    padding: 50px;
+    text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    text-align: center;
+    font-family: 'Lobster', sans-serif;    
+}
+
+.baskets-form {
+    background: rgba(255, 255, 255, 0.5);
+    display: hidden;
+    width: 500px;
+    margin: 25px auto 0 auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.products {
+    padding: 15px 0;
+    width: fit-content;
+    margin: 25px auto;
+    background: white;
+    border-radius: 5px;    
+}
+
+.table-header > :first-child,
+.basket-container > :first-child {
+    text-align: right;
+    padding-left: 15px;
+    border-left: none;
+    box-sizing: content-box;
+}
+
+.table-header > :last-child,
+.basket-container > :last-child {
+    padding-right: 15px;
+    box-sizing: content-box;
+}
+
+.table-header {
+    border-bottom: 1px solid #ccc;
+}
+
+label.property {
+    font-size: 1.2em;
+}
+
+.property {
+    margin: 0;
+    width: 100px;
+    padding: 5px 7px;
+    box-sizing: border-box;
+    border-left: 1px solid #ccc;
+}
+
+.property-s {
+    width: 50px;
+    text-align: center;
+}
+
+.property-m {
+    width: 75px;
+    text-align: center;
+}
+
+.input-section {
+    margin-bottom: 5px;
+}
+
+.simple-row {
+    display: flex;
+    justify-content: space-around;
+}
+
+.color-spot {
+    border-radius: 100%;
+    width: 50px;
+    text-align: center;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column-reverse;
+}
+
+.color-spot input {
+    margin: 0;
+}
+
+.grey {
+    background-color: grey;
+}
+
+.red-text {
+    font-weight: bold;
+    color: rgb(160, 40, 40);
+}
+
+.red {
+    background-color: rgb(160, 40, 40);
+}
+
+.blue-text {
+    font-weight: bold;
+    color: rgb(56, 56, 184);
+}
+
+.blue {
+    background-color: rgb(56, 56, 184);
+}
+
+.green-text {
+    font-weight: bold;
+    color: rgb(0, 92, 0);
+}
+
+.green {
+    background-color: rgb(0, 92, 0);
+}
+
+.pop-up_confirm {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    border: 1px solid #ccc;
+    padding: 15px;
+}
+
+.pop-up_message {
+    top: 25px;
+    left: 25px;
+    width: 200px;
+    height: 50px;
+    padding: 5px;
+    display: flex;
+    position: fixed;
+    background: white;
+    border-radius: 5px;
+    align-content: center;
+    flex-direction: column;
+    box-shadow: 3px 3px 5px #ccc;
+}
+
+.delete-button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
