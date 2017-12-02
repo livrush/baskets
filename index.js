@@ -15,7 +15,7 @@ function hideForms() {
 }
 
 function editBasket(id, data) {
-  confirmChoice(`Are you sure you want to delete ${name} basket?`)
+  confirmChoice(`Are you sure you want to update ${data.name} basket?`)
     .then((secret) => {
       console.warn(secret);
       $.ajax({
@@ -197,15 +197,16 @@ function confirmChoice(message) {
   return new Promise((res, rej)=> {
     const $popUp = $('<div>')
       .addClass('pop-up_confirm');
-    const $message = $('<p>')
+    const $title = $('<h1>')
+      .text('Are you sure?');
+    const $label = $('<label>')
       .text(message);
-    const $message2 = $('<p>')
+    const $message = $('<p>')
       .text('If so, enter authorization password below.');
     const $input = $('<input>')
       .attr('id', 'secret')
       .attr('type', 'password')
-      .addClass('form-control')
-      .focus();
+      .addClass('form-control');
     const $decline = $('<button>')
       .text('No')
       .addClass('btn btn-danger')
@@ -213,7 +214,7 @@ function confirmChoice(message) {
         $('.pop-up_confirm').remove();
         rej();
       });
-      const $accept = $('<button>')
+    const $accept = $('<button>')
       .text('Yes')
       .addClass('btn btn-success')
       .click(() => {
@@ -221,8 +222,9 @@ function confirmChoice(message) {
         $('.pop-up_confirm').remove();
         res(secret);
       });
-    $popUp.append($message, $message2, $input, $('<div>').append($decline, $accept));
+    $popUp.append($title, $label, $message, $input, $('<div>').append($decline, $accept));
     $('body').append($popUp);
+    $input.focus();
   })
 }
 
