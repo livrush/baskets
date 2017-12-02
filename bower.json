@@ -1,0 +1,19 @@
+{
+  "name": "basket-db",
+  "description": "App to enter basket information",
+  "main": "index.js",
+  "license": "ISC",
+  "homepage": "https://longaberger-database.herokuapp.com/",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "components-font-awesome": "^4.7.0",
+    "jquery": "^3.2.1"
+  }
+}
