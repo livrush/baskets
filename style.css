@@ -34,6 +34,10 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: 5px;    
 }
 
+.products > :nth-child(even) {
+    background: #f7f7f7;
+}
+
 .table-header > :first-child,
 .basket-container > :first-child {
     text-align: right;
