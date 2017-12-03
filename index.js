@@ -1,16 +1,29 @@
 $('document').ready(function() {
-  getBaskets();
-  getCeramics();
+  // getBaskets();
+  // getCeramics();
 
   $('#show-basket-form').click(function() {
-    $('.ceramics-form').hide();
-    $('.baskets-form').toggle();
-  })
-  
-  $('#show-ceramics-form').click(function() {
-    $('.baskets-form').hide();
-    $('.ceramics-form').toggle();
-  })
+    $('#form-ceramic').hide();
+    if ($('#form-basket')[0].childElementCount) {
+      $('#form-basket').toggle();
+    } else {
+      window.basketForm();
+      $('#form-basket').show();
+    }
+    $('#basket-focus').focus();
+  });
+
+  $('#show-ceramic-form').click(function() {
+    console.warn('hey')
+    $('#form-basket').hide();
+    if ($('#form-ceramic')[0].childElementCount) {
+      $('#form-ceramic').toggle();
+    } else {
+      window.ceramicForm();
+      $('#form-ceramic').show();
+    }
+    $('#ceramic-focus').focus();
+  });
 
   $('#show-basket-products').click(function() {
     $('.ceramic-products').hide();
