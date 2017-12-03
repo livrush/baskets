@@ -7,7 +7,7 @@ const ObjectId = require('mongodb').ObjectID;
 const MongoClient = require('mongodb').MongoClient;
 const PORT = process.env.PORT;
 const MONGO = process.env.MONGO;
-const helpers = require('/server-helpers');
+const helpers = require('./server-helpers');
 let DB = null;
 
 app.use(bodyParser.urlencoded({extended: true}));
