@@ -15,9 +15,10 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Lobster', sans-serif;    
 }
 
-.baskets-form {
+.baskets-form,
+.ceramics-form {
+    /* display: hidden; */
     background: rgba(255, 255, 255, 0.5);
-    display: hidden;
     width: 500px;
     margin: 25px auto 0 auto;
     border: 1px solid #ccc;
@@ -26,7 +27,8 @@ h1, h2, h3, h4, h5, h6 {
     box-sizing: border-box;
 }
 
-.products {
+.ceramic-products,
+.basket-products {
     padding: 15px 0;
     width: fit-content;
     margin: 25px auto;
@@ -34,20 +36,22 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: 5px;    
 }
 
-.products > :nth-child(even) {
+.ceramic-products > :nth-child(even),
+.basket-products > :nth-child(even) {
     background: #f7f7f7;
 }
 
 .table-header > :first-child,
-.basket-container > :first-child {
+.basket-container > :first-child,
+.ceramic-container > :first-child {
     text-align: right;
-    padding-left: 15px;
+    margin-left: 15px;
     border-left: none;
-    box-sizing: content-box;
 }
 
 .table-header > :last-child,
-.basket-container > :last-child {
+.basket-container > :last-child,
+.ceramic-container > :last-child {
     padding-right: 15px;
     box-sizing: content-box;
 }
