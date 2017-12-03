@@ -1,5 +1,6 @@
 const make = {
   element: {},
+  design: {},
   popUp: {},
 };
 
@@ -25,7 +26,7 @@ make.element.input = function (value, name, classNames) {
   return $element;
 }
 
-make.element.select.number = function (name, start, end, select) {
+make.element.selectNumber = function (name, start, end, select) {
   const $select = $('<select>').attr('name', name);
   $select.append(
     $('<option>').text('N/A')
@@ -55,7 +56,7 @@ make.element.select.word = function (name, choices, select) {
   return $select;
 }
 
-make.trueFalseIcon = function (bool) {
+make.icon.trueFalse = function (bool) {
   if (bool) {
     return $('<i>').addClass('fa fa-check-square green-text').attr('exists', 'true').attr('aria-hidden', 'true');
   } else {
@@ -63,7 +64,7 @@ make.trueFalseIcon = function (bool) {
   }
 }
 
-make.poductsHeader = function () {
+make.design.poductsHeader = function () {
   const $year = makeElement('<label>', 'property property-s year', 'Year');
   const $quantity = makeElement('<label>', 'property property-s quantity', '#');
   const $name = makeElement('<label>', 'property name', 'Name');
@@ -79,8 +80,12 @@ make.poductsHeader = function () {
   return $('<div>').append($year, $quantity, $name, $type, $color, $size, $lid, $liner, $protector, $edit, $delete).addClass('table-header simple-row');
 }
 
-make.productsBody = function (products) {
+make.design.productsBody = function (products) {
 
+}
+
+make.design.editProduct = function (product) {
+  
 }
 
 // !!! //////////////////////////////////////////////////////////////
