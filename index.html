@@ -24,6 +24,11 @@
       <button id="show-ceramics-form" class="btn btn-info">Edit Ceramics</button>
       <button id="show-accessories-form" class="btn btn-warning">Edit Accessories</button>
     </div>
+    <div>
+      <button id="show-basket-products" class="btn btn-primary">Show Baskets</button>
+      <button id="show-ceramic-products" class="btn btn-info">Show Ceramics</button>
+      <button id="show-accessories-products" class="btn btn-warning">Show Accessories</button>
+    </div>
   </header>
 
   <div class="baskets-form" hidden>
@@ -33,14 +38,21 @@
       <div class="row input-section">
         <label class="col-xs-4">Year</label> 
         <div class="col-xs-8">
-          <input class="form-control" name="year" type="text" autofocus>
+          <input class="form-control" name="year" type="text">
+        </div>
+      </div>
+      <div class="row input-section">
+        <label class="col-xs-4">Name</label> 
+        <div class="col-xs-8">
+          <input class="form-control" name="name" type="text">
         </div>
       </div>
       <div class="row input-section">
         <label class="col-xs-4">Quantity</label> 
         <div class="col-xs-8">
           <select class="form-control" name="quantity">
-            <option>1</option>
+            <option>0</option>
+            <option selected>1</option>
             <option>2</option>
             <option>3</option>
             <option>4</option>
@@ -48,12 +60,6 @@
             <option>6</option>
             <option>7</option>
           </select>
-        </div>
-      </div>
-      <div class="row input-section">
-        <label class="col-xs-4">Name</label> 
-        <div class="col-xs-8">
-          <input class="form-control" name="name" type="text">
         </div>
       </div>
       <div class="row input-section">
@@ -65,7 +71,7 @@
       <div class="row input-section">
         <label class="col-xs-4">Description</label> 
         <div class="col-xs-8">
-          <input class="form-control" name="description" type="text">
+          <input class="form-control" name="desc" type="text">
         </div>
       </div>
       <div class="row input-section">
@@ -163,9 +169,114 @@
 
     </form>
   </div>
-  
-  <div class="products">
-    
+
+
+
+
+  <div class="ceramics-form">
+    <h3>Ceramics Entry Form</h3>
+    <form action="/ceramic" method="POST">
+      <!-- Strings -->
+      <div class="row input-section">
+        <label class="col-xs-4">Name</label> 
+        <div class="col-xs-8">
+          <input class="form-control" name="name" type="text" autofocus>
+        </div>
+      </div>
+      <div class="row input-section">
+        <label class="col-xs-4">Quantity</label> 
+        <div class="col-xs-8">
+          <select class="form-control" name="quantity">
+            <option>0</option>
+            <option selected>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+            <option>9</option>
+            <option>10</option>
+          </select>
+        </div>
+      </div>
+      <div class="row input-section">
+        <label class="col-xs-4">Type</label> 
+        <div class="col-xs-8">
+          <input class="form-control" name="type" type="text">
+        </div>
+      </div>
+      <div class="row input-section">
+        <label class="col-xs-4">Description</label> 
+        <div class="col-xs-8">
+          <input class="form-control" name="desc" type="text">
+        </div>
+      </div>
+      <!-- <div class="row input-section">
+        <label class="col-xs-4">Color/Style</label> 
+        <div class="col-xs-8 simple-row">
+          <div class="color-spot red">
+            <input type="radio" name="color" value="red">
+          </div>
+          <div class="color-spot blue">
+            <input type="radio" name="color" value="blue">
+          </div>
+          <div class="color-spot green">
+            <input type="radio" name="color" value="green">
+          </div>
+          <div class="color-spot grey simple-row">
+            <input type="radio" name="color" value="ivory" checked>
+          </div>
+          <div class="color-spot grey simple-row">
+            <p>N/A</p>
+            <input type="radio" name="color" value="null" checked>
+          </div>
+        </div>
+      </div> -->
+      <div class="row input-section">
+        <label class="col-xs-4">Color</label> 
+        <div class="col-xs-8">
+          <select class="form-control" name="color">
+            <option value="N/A" selected>N/A</optionc>
+            <option value="blue">Blue</option>
+            <option value="red">Red</option>
+            <option value="green">Green</option>
+            <option value="ivory">Ivory</option>
+          </select>
+        </div>
+      </div>
+      <div class="row input-section">
+        <label class="col-xs-4">Size</label> 
+        <div class="col-xs-8">
+          <select class="form-control" name="size">
+            <option value="N/A" selected>N/A</option>
+            <option value="small">Small</option>
+            <option value="medium">Medium</option>
+            <option value="large">Large</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Arrays -->
+      <div class="row input-section">
+        <label class="col-xs-4">What Accessories</label> 
+        <div class="col-xs-8">
+          <input class="form-control" name="accessories-list" type="text" placeholder="Separate with comma"> 
+        </div>
+      </div>
+
+      <div class="row input-section">
+        <label class="col-xs-4"></label>
+        <div class="col-xs-8 simple-row">
+          <button type="submit" class="btn btn-lg btn-success">Submit</button>
+        </div>
+      </div>
+
+    </form>
   </div>
+  
+  <div class="basket-products" hidden></div>
+  <div class="ceramic-products"></div>
 </body>
 </html>
