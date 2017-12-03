@@ -8,6 +8,7 @@ header {
     background: white;
     padding: 50px 15px;
     text-align: center;
+    margin-bottom: 25px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -15,12 +16,17 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Lobster', sans-serif;    
 }
 
+.button-row {
+    margin-bottom: 15px;
+}
+
+.form,
 .baskets-form,
 .ceramics-form {
     /* display: hidden; */
     background: rgba(255, 255, 255, 0.5);
     width: 500px;
-    margin: 25px auto 0 auto;
+    margin: 0 auto 25px auto;
     border: 1px solid #ccc;
     border-radius: 5px;
     padding: 15px;
@@ -31,7 +37,7 @@ h1, h2, h3, h4, h5, h6 {
 .basket-products {
     padding: 15px 0;
     width: fit-content;
-    margin: 25px auto;
+    margin: 0 auto 25px auto;
     background: white;
     border-radius: 5px;    
 }
