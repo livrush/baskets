@@ -1,48 +1,60 @@
 const make = {
-  element: {},
+  element: {
+    select: {},
+  },
   design: {},
   popUp: {},
+  icon: {},
 };
 
 // !!! //////////////////////////////////////////////////////////////
 // !!! ELEMENT //////////////////////////////////////////////////////
 // !!! //////////////////////////////////////////////////////////////
 
-make.element.any = function (element, classNames, text, attr) {
+make.element.any = function (element, text, attributes, classNames) {
   const $element = $(element);
   $element.text(text);
-  $element.addClass(classNames);
-  if (attr) {
-    $element.attr(attr[0], attr[1]);
-  }
+  $element.addClass(classNames.join(' '));
+  $element.attr(attributes);
   return $element;
 }
 
-make.element.input = function (value, name, classNames) {
-  const $element = $('<input>');
-  $element.attr('value', value);
-  $element.attr('name', name)
-  $element.addClass(classNames, 'input-edit');
-  return $element;
+make.element.label = function (value, classNames) {
+  const $label = $('<label>');
+  $label.text(value);
+  $label.addClass(classNames.join(' '));
+  return $label;
 }
 
-make.element.selectNumber = function (name, start, end, select) {
-  const $select = $('<select>').attr('name', name);
-  $select.append(
-    $('<option>').text('N/A')
-  )
-  for (let val = start; val < end + 1; val++) {
-    const $option = $('<option>').text(start);
-    $select.append($option);
-    if (val === select) {
-      $option.prop('selected', true);
+make.element.input = function (attributes, classNames) {
+  const $input = $('<input>');
+  $input.attr(attributes);
+  $input.addClass(classNames.join(' '));
+  $input.addClass('form-control');
+  return $input;
+}
+
+make.element.select.number = function ({ name, start, end, select }) {
+  const $select = $('<select>')
+    .attr('name', name)
+    .addClass('form-control');
+    $select.append(
+      $('<option>').text('N/A')
+    )
+    for (let val = start; val < end + 1; val++) {
+      const $option = $('<option>').text(val);
+      $select.append($option);
+      if (val === select) {
+        $option.prop('selected', true);
+      }
     }
+    return $select;
   }
-  return $select;
-}
-
-make.element.select.word = function (name, choices, select) {
-  const $select = $('<select>').attr('name', name);
+  
+  make.element.select.word = function ({ name, choices, select }) {
+    const $select = $('<select>')
+    .attr('name', name)
+    .addClass('form-control');
   $select.append(
     $('<option>').text('N/A')
   )
@@ -56,12 +68,24 @@ make.element.select.word = function (name, choices, select) {
   return $select;
 }
 
+// !!! //////////////////////////////////////////////////////////////
+// !!! ICON /////////////////////////////////////////////////////////
+// !!! //////////////////////////////////////////////////////////////
+
 make.icon.trueFalse = function (bool) {
   if (bool) {
     return $('<i>').addClass('fa fa-check-square green-text').attr('exists', 'true').attr('aria-hidden', 'true');
   } else {
     return $('<i>').addClass('fa fa-window-close red-text').attr('exists', 'false').attr('aria-hidden', 'true');
   }
+}
+
+// !!! //////////////////////////////////////////////////////////////
+// !!! LAYOUT ///////////////////////////////////////////////////////
+// !!! //////////////////////////////////////////////////////////////
+
+make.design.row = function () {
+  return $('<div>').addClass('row input-section');
 }
 
 make.design.poductsHeader = function () {
