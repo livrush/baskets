@@ -4,6 +4,7 @@
   "description": "App to enter basket information",
   "main": "index.js",
   "scripts": {
+    "postinstall": "./node_modules/bower/bin/bower install",
     "start": "nodemon server.js",
     "offline": "nodemon server-offline.js",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bower": "1.8.0",
     "body-parser": "^1.18.2",
     "dotenv": "^4.0.0",
     "express": "^4.16.2",
